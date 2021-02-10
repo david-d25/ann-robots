@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" defer></script>
+    <script src="util.js" defer></script>
+    <script src="Bullet.js" defer></script>
+    <script src="Player.js" defer></script>
+    <script src="NeuralNetwork.js" defer></script>
+    <script src="Wall.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="controls" class="active">
+
+      <span id="version"></span>
+      <label for="simulation-accuracy">Simulation accuracy: <input id="simulation-accuracy" type="number" value="100" min="10" max="1000"></label>
+      <label for="target-fps">Target FPS: <input id="target-fps" type="number" value="60" min="10" max="1000"></label>
+      <br>
+
+      <label for="players-number">Players number: <input id="players-number" type="number" value="10" min="3" max="20"></label>
+      <br>
+
+      <label for="player-fov">Field of view (deg): <input id="player-fov" type="number" value="75" min="20" max="360"></label>
+      <label for="player-rays">Rays number: <input id="player-rays" type="number" value="10" min="2" max="180"></label>
+      <label for="player-size">Player size: <input id="player-size" type="number" value="30" min="50" max="200"></label>
+      <label for="player-energy">Player energy: <input id="player-energy" type="number" value="100" min="1"></label>
+      <label for="player-vision-distance">Vision distance: <input id="player-vision-distance" type="number" value="6" min="0.5" max="12"></label>
+      <br>
+
+      <label for="player-shot-cost">Shot cost: <input id="player-shot-cost" type="number" value="2" min="0" max="25" step="0.1"></label>
+      <label for="player-move-cost">Move cost: <input id="player-move-cost" type="number" value="0.001" min="0" max="25" step="0.001"></label>
+      <label for="player-rotate-cost">Rotate cost: <input id="player-rotate-cost" type="number" value="0.1" min="0" max="25" step="0.1"></label>
+      <label for="player-live-cost">Live cost (per sec): <input id="player-live-cost" type="number" value="1" min="0" max="25" step="0.1"></label>
+      <br>
+
+      <label for="fitness-per-kill">Fitness per kill: <input id="fitness-per-kill" type="number" value="1" min="0" max="25" step="0.1"></label>
+      <label for="fitness-per-move">Fitness per move: <input id="fitness-per-move" type="number" value="0.001" min="0" max="25" step="0.001"></label>
+      <br>
+
+      <label for="nn-hidden-layers">Hidden layers: <input id="nn-hidden-layers" type="number" value="4" min="1" max="20"></label>
+      <label for="nn-layer-neurons">Hidden layer neurons: <input id="nn-layer-neurons" type="number" value="10" min="2" max="20"></label>
+      <label for="nn-max-synapse-weight">Max synapse weight: <input id="nn-max-synapse-weight" type="number" value="0.5" min="0.01" max="0.8" step="0.02"></label>
+      <label for="mutation-step">Mutation step: <input id="mutation-step" type="number" value="0.1" min="0" max=".9" step="0.01"></label>
+      <br>
+
+      <label for="players-to-select">Players to select: <input id="players-to-select" type="number" value="3" min="1" max="100"></label>
+      <br>
+
+      <label for="game-speed-multiplier">
+        Speed multiplier: <input id="game-speed-multiplier" type="number" value="1" step=".5" min="0" max="50">
+      </label>
+      <br>
+
+      <label for="show-rays">Show rays: <input id="show-rays" type="checkbox" checked></label>
+      <br>
+
+      <div class="gameplay-controls controls-row">
+        <button id="start-btn" class="gameplay-controls__btn standart-btn">Start</button>
+        <button id="pause-btn" class="gameplay-controls__btn standart-btn">Pause</button>
+        <button id="play-btn" class="gameplay-controls__btn standart-btn">Play</button>
+      </div>
+      <br>
+
+      <div class="state-controls controls-row">
+        <button id="save-state-btn" class="state-controls__btn standart-btn">Save state</button>
+        <button id="load-state-btn" class="state-controls__btn standart-btn">Load state</button>
+      </div>
+
+    </div>
+    <div id="controls-btn">
+      TOGGLE<br>CONTROLS
+    </div>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+  </body>
+</html>

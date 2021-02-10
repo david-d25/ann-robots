@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background: #aaa;
+  text-align: center;
+  font-family: sans-serif;
+  color: black;
+}
+
+#canvas {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: auto;
+  background: white;
+}
+
+#controls {
+  position: absolute;
+  background: rgba(200,200,200,.5);
+  top: 0;
+  right: 0;
+  padding: 80px 20px 20px;
+  display: none;
+  text-align: left;
+  max-height: 100vh;
+}
+
+#controls > label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#controls.active {
+  display: block;
+}
+
+#controls-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background: rgba(200, 200, 200, .5);
+  user-select: none;
+  cursor: pointer;
+}
+
+#controls-btn:active {
+  background: rgba(150, 150, 150, .5);
+}
+
+#version {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+input[type="number"] {
+  width: 25%;
+}
+
+.gameplay-controls__btn {
+  width: 100%;
+}  
+
+.state-controls__btn {
+  width: 100%;
+}
+.controls-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.standart-btn {
+  border: none;
+  height: 25px;
+  background: rgba(200, 200, 200, .75);
+  outline: 0;
+  cursor: pointer;
+}
+.standart-btn:hover {
+  background: rgba(225, 225, 225, .75);
+}
+.standart-btn:active {
+  background: rgba(150, 150, 150, .75);
+}
